@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>about</title>
+	<style>
+	*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "poppins", sans-serif;
+		}
+		section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			padding: 50px;
+			background-color: #a4cce7;
+		}
+		.container {
+			position: relative;
+			width: calc(100% - 100px);
+			min-height: calc(100vh - 280px);
+			min-height: 300px;
+			background: rgba(255, 255, 255, 0.5);
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+			border-radius: flex;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 50px;
+		}
+		header {
+			position: absolute;
+			top: -40px;
+			right: 20px;
+			left: 20px;
+			padding: 20px 50px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background: rgba(255, 255, 255, 0.2);
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+			border-radius: 20px;
+			backdrop-filter: blur(15px);
+			border: 1px solid rgba(255, 255, 255, 0.25);
+			border-top: 1px solid rgba(255, 255, 255, 0.5);
+			border-left: 1px solid rgba(255, 255, 255, 0.5);
+		}
+		header .logo {
+			color: #1f71a1;
+			font-weight:tr 700;
+			text-decoration: none;
+			font-size: 2em; 
+		}
+		header ul {
+			display: flex;
+		}
+		header il li {
+			list-style: none;
+			margin: 0 10px;
+		}
+		header ul li a {
+			text-decoration: none;
+			color: #1f71a1 ;
+			font-weight: bold;
+			padding: 8px 15px;
+			border-radius: 25px;
+		}
+		header ul li a:hover,
+		header ul li a.active {
+			background-color: aliceblue;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		}
+		.h1 {
+			color: #1f71a1;
+			font-size: 50px;
+			margin: 50px 0;
+			text-align: center;
+
+		}
+		.gallery {
+			width: 600px;
+			background-color: aliceblue;
+			margin: auto;
+			padding: 30px;
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+			box-shadow: 5px;
+			border-radius: 10px;			
+		}
+		.gallery li {
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			overflow: hidden;
+			border: 5px solid #666;
+			float: left;
+			margin-right: 10px;
+		}
+		.clear {
+			clear: both;
+		}
+		.overlay {
+			width: 0;
+			height: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0);
+			z-index: 999;
+			transition: 0.8s;
+			text-align: center;
+			padding: 100px;
+		}
+		.overlay:target {
+			width: auto;
+			height: auto;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.3);
+		}
+		.overlay close {
+			position: absolute;
+			top: 50px;
+			left: 50%;
+			margin-left: -20px;
+			color: white;
+			text-decoration: none;
+
+		}
+		.overlay img {
+			max-height: 100%;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+			border-radius: 10%;
+			width: 250px;
+		}
+		.next {
+			width: 57px;
+			height: 93px;
+			position: absolute;
+			text-indent: -9999 px;
+			top: 40%;
+			margin-left: 50px;
+
+		}
+		.prev {
+			width: 57px;
+			height: 93px;
+			position: absolute;
+			text-indent: -9999 px;
+			top: 40%;
+			margin-left: -100px;
+		}
+		.imgbox {
+			text-align: center;
+		}
+		.imgbox img {
+			width: 300px;
+			background-color: aliceblue;
+			margin: ;
+			padding: 20px;
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+			box-shadow: 5px;
+			border-radius: 10px;
+		}
+		@keyframes animate {
+			0%
+			100% {
+				transform: translateY(50px);
+			}
+			50% {
+				transform: translateY(100px);
+			}
+		}
+		
+		@media screen and (max-width: 1200px) {
+			.container {
+				position: relative;
+				width: calc(100% - 20px);
+			}
+		}
+
+		@media screen and (max-width: 992px) {
+			.section {
+				padding: 50px 10px 10px;
+			}
+			.container {
+				flex-direction: column;
+				height: auto;
+				padding: 20px;
+			}
+		}
+		.container .content {
+			transform: translateX(0px);
+			max-width: 100%;
+			margin-top: -20px;
+			padding: 30px;
+		}
+		header {
+			position: relative;
+			flex-direction: column;
+			width: 100%;
+			top: -40px;
+			padding: 20px;
+			right: 0;
+			left: 0;
+		}
+		header ul {
+			margin-top: 10px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		header ul li {
+			margin: 3px;
+		}
+		header ul li a {
+			display: inline-block;
+			font-size: 1em;
+		}
+		.imgbox {
+			margin-bottom: 50px;
+		}
+		.content a {
+			font-size: 1em;
+			padding: 10px 20px;
+		}
+
+		@keyframes animate {
+			0%,
+			100% {
+				transform: translateY(10px);
+			}
+			50% {
+				transform: translateY(30px);
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			.container .content {
+				margin-top: -30px;
+			}
+			.content h2 {
+				font-size: 0.7em;
+			}
+			.content p {
+				font-size: 0.7em;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<header>
+				<a href="#" class="logo">Abna Savina</a>
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="project.html" class="active">Project</a></li>
+				</ul>
+      		</header>
+      		<h1>My Ilustration</h1>
+        	<div class="gallery">
+        		<ul>
+        			<li>
+        				<a href="#gambar-1">
+        				<img src="./image/ils1.jpg">
+        				</a>
+        	<div class="overlay" id="gambar-1">
+        		<a href="#" class="close">close</a>
+        		<a href="#gambar-4" class="prev">prev</a>
+        		<img src="./image/ils1.jpg">
+        		<a href="#gambar-2" class="next">next</a>
+        		</div>
+        			</li>        
+        			<li>
+        				<a href="#gambar-2">
+        				<img src="./image/ils2.jpg">
+        				</a>
+        	<div class="overlay" id="gambar-2">
+        		<a href="#" class="close">close</a>
+        		<a href="#gambar-1" class="prev">prev</a>
+        		<img src="./image/ils2.jpg">
+        		<a href="#gambar-3" class="next">next</a>
+        	</div>
+        			</li>        
+        			<li>
+        				<a href="#gambar-3">
+        				<img src="./image/ils3.jpg">
+        				</a>
+        	<div class="overlay" id="gambar-3">
+        		<a href="#" class="close">close</a>
+        		<a href="#gambar-2" class="prev">prev</a>
+        		<img src="./image/ils3.jpg">
+        		<a href="#gambar-4" class="next">next</a>
+        	</div>
+        			</li> 
+        			<li>
+        				<a href="#gambar-4">
+        				<img src="./image/ils4.jpg">
+        				</a>
+        	<div class="overlay" id="gambar-4">
+        		<a href="#" class="close">close</a>
+        		<a href="#gambar-3" class="prev">prev</a>
+        				<img src="./image/ils4.jpg">
+        		<a href="#gambar-1" class="next">next</a>
+                 </div>
+        			</li> 
+        			<div class="clear">
+        				
+        			</div>
+        		</ul>
+        	</div> 
+        	<h1>Skill & Project</h1>         			
+        	<div class="imgbox">
+				<img src="./image/projects1.png" >
+				<img src="./image/projects11.png" >
+				<img src="./image/mc1.jpeg" >
+				<img src="./image/mc2.jpeg" >
+			</div>
+	</section>
+
+</body>
+</html>
